@@ -19,17 +19,15 @@ class PokemonMarker extends StatelessWidget {
     );
   }
 
+  // ----------------------------------------------------------
+  // TODO: 2. 포켓몬 이미지를 지도 마커로 사용하기
+  // ----------------------------------------------------------
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       behavior: HitTestBehavior.opaque,
-      child: Image.asset(
-        pokemon.assetPath,
-        width: 64,
-        height: 64,
-        fit: BoxFit.contain,
-      ),
+      child: FlutterLogo(),
     );
   }
 }

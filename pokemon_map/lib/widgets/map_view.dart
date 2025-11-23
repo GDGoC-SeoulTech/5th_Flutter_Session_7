@@ -21,8 +21,14 @@ class PokemonMapView extends StatelessWidget {
     return FlutterMap(
       options: MapOptions(initialCenter: center, initialZoom: 13),
       children: [
+        // ----------------------------------------------------------
+        // TODO: 1. Map Style 변경하기
+        // ----------------------------------------------------------
         TileLayer(
-          urlTemplate: 'https://basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
+          // 라이트 버전
+          urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+          // 다크 버전
+          // urlTemplate: 'https://basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
           userAgentPackageName: 'com.example.pokemon_map',
         ),
 
