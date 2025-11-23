@@ -8,3 +8,13 @@
 - 지도 위 포켓몬을 탭해서 사냥하기
 
 <br />
+
+## 시작하기
+```bash
+git clone https://github.com/GDGoC-SeoulTech/5th_Flutter_Session_7
+cd 5th_Flutter_Session_7/pokemon_map
+flutter pub get
+flutter run
+```
+
+<br />
