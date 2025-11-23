@@ -17,3 +17,5 @@ code .
 ```
 
 <br />
+
+<img width="350" src="resources/sim.gif"/>
