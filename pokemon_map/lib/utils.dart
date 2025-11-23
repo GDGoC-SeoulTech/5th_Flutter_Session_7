@@ -2,28 +2,43 @@ import 'dart:math';
 import 'package:latlong2/latlong.dart';
 import 'package:pokemon_map/models.dart';
 
-final _rand = Random();
+final Random _random = Random();
 
-List<PokemonSpot> generateRandomPokemonsAround(
-  LatLng center, {
-  int count = 10,
-  double maxOffsetInDegrees = 0.003,
+List<PokemonSpot> generateInitialPokemons({
+  required LatLng center,
+  int count = 20,
+  int idMin = 1,
+  int idMax = 100,
+  double maxOffsetDeg = 0.05,
 }) {
-  final List<PokemonSpot> list = [];
+  return List.generate(count, (_) {
+    final id = idMin + _random.nextInt(idMax - idMin + 1);
 
-  for (var i = 0; i < count; i++) {
-    final dx = (_rand.nextDouble() * 2 - 1) * maxOffsetInDegrees;
-    final dy = (_rand.nextDouble() * 2 - 1) * maxOffsetInDegrees;
+    final dx = (_random.nextDouble() * 2 - 1) * maxOffsetDeg;
+    final dy = (_random.nextDouble() * 2 - 1) * maxOffsetDeg;
 
-    list.add(
-      PokemonSpot(
-        id: 'poke_$i',
-        name: 'Pokemon #$i',
-        assetPath: 'assets/pokemon/poke_${i % 3}.png',
-        lat: center.latitude + dx,
-        lon: center.longitude + dy,
-      ),
+    return PokemonSpot(
+      id: id,
+      lat: center.latitude + dx,
+      lon: center.longitude + dy,
     );
-  }
-  return list;
+  });
+}
+
+PokemonSpot spawnOnePokemon({
+  required LatLng center,
+  int idMin = 1,
+  int idMax = 100,
+  double maxOffsetDeg = 0.05,
+}) {
+  final id = idMin + _random.nextInt(idMax - idMin + 1);
+
+  final dx = (_random.nextDouble() * 2 - 1) * maxOffsetDeg;
+  final dy = (_random.nextDouble() * 2 - 1) * maxOffsetDeg;
+
+  return PokemonSpot(
+    id: id,
+    lat: center.latitude + dx,
+    lon: center.longitude + dy,
+  );
 }
