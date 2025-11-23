@@ -13,8 +13,7 @@
 ```bash
 git clone https://github.com/GDGoC-SeoulTech/5th_Flutter_Session_7
 cd 5th_Flutter_Session_7/pokemon_map
-flutter pub get
-flutter run
+code .
 ```
 
 <br />
