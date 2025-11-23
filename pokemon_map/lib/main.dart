@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:pokemon_map/models.dart';
 import 'package:pokemon_map/utils.dart';
 import 'package:pokemon_map/widgets/map_view.dart';
 
 void main() {
-  runApp(const Main());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+
+  runApp(const PokemonMapApp());
 }
 
-class Main extends StatelessWidget {
-  const Main({super.key});
+class PokemonMapApp extends StatelessWidget {
+  const PokemonMapApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Pokemon Map',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
@@ -47,8 +52,13 @@ class _PokemonMapState extends State<PokemonMap> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: const Text('Pokemon Map'),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        surfaceTintColor: Colors.transparent,
+        shadowColor: Colors.transparent,
+        foregroundColor: Colors.white,
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh),

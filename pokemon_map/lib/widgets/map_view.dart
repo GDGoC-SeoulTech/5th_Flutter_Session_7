@@ -19,7 +19,7 @@ class PokemonMapView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterMap(
-      options: MapOptions(initialCenter: center, initialZoom: 12),
+      options: MapOptions(initialCenter: center, initialZoom: 13),
       children: [
         TileLayer(
           urlTemplate: 'https://basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
