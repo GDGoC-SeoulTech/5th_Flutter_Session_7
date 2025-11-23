@@ -7,11 +7,11 @@ rm -f "$OUT_DIR"/*
 
 BASE_URL="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon"
 
-RANDOM_IDS=$(shuf -i 1-600 -n 100)
-
-for id in $RANDOM_IDS; do
+for id in $(seq 1 100); do
     filename="poke_${id}.png"
     url="${BASE_URL}/${id}.png"
+
+    echo "→ #$id"
     curl -s -L "$url" -o "$OUT_DIR/$filename"
 done
 
