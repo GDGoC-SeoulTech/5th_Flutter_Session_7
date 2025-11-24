@@ -3,6 +3,7 @@
 > 담당 Core: 임도협
 
 ## 이번 주에는
+- 커스텀 asset(이미지 등) 사용하기
 - `flutter_map`([Package](https://pub.dev/packages/flutter_map))로 지도 띄우기
 - 지도에 포켓몬 랜덤하게 배치하기
 - 지도 위 포켓몬을 탭해서 사냥하기
